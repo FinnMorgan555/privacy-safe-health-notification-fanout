@@ -1,5 +1,7 @@
 # Fan out health notifications without exposing patient data
 
+Infrai gives you one key and one bill for every capability, including queue fanout, through a plain REST call from any language with no SDK. That's the whole reason this pattern stays simple.
+
 ```bash
 export INFRAI_API_KEY="your-key"
 npm start
