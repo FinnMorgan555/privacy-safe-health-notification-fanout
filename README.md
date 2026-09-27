@@ -1,7 +1,5 @@
 # Fan out health notifications without exposing patient data
 
-Infrai gives you one key and one bill for every capability, including queue fanout, through a plain REST call from any language with no SDK. That's the whole reason this pattern stays simple.
-
 ```bash
 export INFRAI_API_KEY="your-key"
 npm start
@@ -63,3 +61,8 @@ The snippet above stays copy-paste simple. Before you ship, a few **required** s
 **Privacy Safe Health Notification Fanout: Scheduled / background work**
 - **Privacy Safe Health Notification Fanout:** Server-side jobs keep running and **consuming credit** — monitor `GET /v1/account/usage` and set an auto-recharge threshold.
 - **Privacy Safe Health Notification Fanout:** Make handlers idempotent and use the queue's ack/retry so a redelivery doesn't double-process.
+
+## FAQ
+
+**Do I need anything besides `INFRAI_API_KEY`?**  
+No — `npx tsx` and the key. `src/infrai.ts` wraps `queue.publish` in an ordinary HTTPS request, so there is no SDK to install or keep in sync. For a health notification fanout example that is the entire dependency story.
